@@ -23,6 +23,7 @@ for intent in intents['intents']:  # look for data in intents with the key inten
         xy.append((w, tag))
 
 ignore = ['!', '@', '#', '$', '%', '^', '&', '*', '?']
+print(words)
 # stemming
 words = [stem(w) for w in words if w not in ignore]
 # putting all words in a set to remove duplicates

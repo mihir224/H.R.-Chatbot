@@ -1,5 +1,4 @@
 import nltk
-import numpy
 import numpy as np
 from nltk.stem.porter import PorterStemmer
 
