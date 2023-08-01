@@ -30,3 +30,12 @@ I recommend using PyCharm IDE for ease of use.
 ## Frontend
 
 You can directly run the base.html in your browser, JavaScript will start sending the user queries to the model and the appropriate responses from the model will then be retrieved and shown in the chat.
+
+## Demo
+
+![image](https://github.com/mihir224/H.R.-Chatbot/assets/77497660/09a352db-b8f7-4cee-80cb-ef6eb8bba7fd)
+![image](https://github.com/mihir224/H.R.-Chatbot/assets/77497660/8340f4b2-ebf7-407b-9663-73f9bd2f8f88)
+
+
+
+
