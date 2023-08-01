@@ -26,19 +26,20 @@ bot_name = "Adam"
 print("Hey there! This is Adam Smith, your Virtual Human Resource (H.R.) Representative")
 print("What can I do for you today?")
 
-while True:
-    sentence = input('You: ')
-    if sentence == "bye":
-        print('I hope I was able to address your concern')
-        print('Thank you')
-        break
 
-    sentence = tokenize(sentence)
+def getResponse(msg):
+    # sentence = input('You: ')
+    # if sentence == "bye":
+    #     print('I hope I was able to address your concern')
+    #     print('Thank you')
+    #     break
+
+    sentence = tokenize(msg)
     X = bag_of_words(sentence, words)
-    X = X.reshape(1, X.shape[0])    # reshaping the X to have 1 row and num of cols=rows as the model expects it in
+    X = X.reshape(1, X.shape[0])  # reshaping the X to have 1 row and num of cols=rows as the model expects it in
     # this format
     X = torch.from_numpy(X).to(device)
-    # bag of words returns an np array and we have to convert it to a tensor
+    # bag of words returns a np array, and we have to convert it to a tensor
 
     output = model(X)
 
@@ -52,6 +53,17 @@ while True:
     if probability > 0.75:
         for intent in intents["intents"]:
             if tag == intent["tag"]:
-                print(f"{bot_name}: {random.choice(intent['responses'])}")
+                return random.choice(intent['responses'])
     else:
-        print(f"{bot_name}: Sorry, I didn't quite get that")
+        return "Sorry, I didn't quite get that."
+
+
+if __name__ == "__main__":  # to run the chat on terminal
+    print("Let's chat!")
+    while True:
+        sentence = input('You: ')
+        if sentence == 'bye':
+            break
+
+        response = getResponse(sentence)
+        print(response)
