@@ -23,7 +23,7 @@ Install the required packages through
 
 `pip install <package-name>`
 
-Then, run the app.py file, this will host the model on a local host as a backend service.
+Then, run the app.py file, this will host the model on the localhost as a backend service.
 
 I recommend using PyCharm IDE for ease of use.
 
